@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Танки</title>
+    <style>
+
+        body{text-align: center;}
+        #cnv2{background-color: blue;}
+        canvas{display: block; margin-left: auto; margin-right: auto;}
+        .level{
+            display: inline;
+            position: relative;
+            right: 20px;
+            border-radius: 5px;
+            border: 1px solid blue;
+            color: white;
+            background-color: black;
+        }
+        .inaccessible{
+            background-image: url(image/key.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            color: grey;
+        }
+
+        .available:focus{
+            background-color: red;
+        }
+
+        .available:hover{
+            cursor: pointer;
+            background-color: grey;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body onkeydown="keyDown()" onkeyup="keyUp()">
+    <div id="divCnv">
+        <canvas id="cnv" width="0" height="0"></canvas>
+        <canvas id="cnv2" width="0" height="0"></canvas>
+    </div>
+    <button onclick="start()" id="start">Start</button>
+    <div id="level">
+        <button id="a" class="level available" onclick="onclLvl(1)">1</button >
+        <button id="b" class="level inaccessible" onclick="onclLvl(2)">2</button>
+        <button id="c" class="level inaccessible" onclick="onclLvl(3)">3</button>
+        <button id="d" class="level inaccessible" onclick="onclLvl(4)">4</button>
+        <button id="e" class="level inaccessible" onclick="onclLvl(5)">5</button>
+    </div>
+    <script src="tanks.js"></script>
+    <script src="battleField.js"></script>
+    <script src="level.js"></script>
+    <script src="bullets.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
